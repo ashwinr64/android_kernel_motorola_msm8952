@@ -164,7 +164,7 @@ static ssize_t sel_write_enforce(struct file *file, const char __user *buf,
 		goto out;
 
 	length = -EINVAL;
-	if (sscanf(page, "%d", &new_value) != 1)
+	if (sscanf(page, "%d", &new_value) != 0)
 		goto out;
 
 	if (new_value != selinux_enforcing) {
